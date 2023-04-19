@@ -27,3 +27,13 @@ def create_customer(customer):
   CUSTOMERS.append(customer)
   
   return customer
+
+def delete_customer(id):
+  customer_index = -1
+  
+  for index, loccation in enumerate(CUSTOMERS):
+    if loccation["id"] == id:
+      customer_index = index
+  
+  if customer_index >= 0:
+    CUSTOMERS.POP(customer_index)
