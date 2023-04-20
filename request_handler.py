@@ -118,7 +118,7 @@ class HandleRequests(BaseHTTPRequestHandler):
         (resource, id) = self.parse_url(self.path)
 
         # Initialize new animal
-        new_entry = None
+        new_animal = None
         new_location = None
         new_employee = None
         new_customer = None
