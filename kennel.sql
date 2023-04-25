@@ -78,3 +78,10 @@ SELECT
 		a.address
 FROM location a
 WHERE a.id = 2
+
+-- Get only the employee row with id field of 4
+SELECT
+    a.id,
+    a.name
+FROM employee a
+WHERE a.id = 4
