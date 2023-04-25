@@ -62,12 +62,12 @@ def get_all_customers():
     
     db_cursor.execute("""
     SELECT
-        a.id,
-        a.name,
-        a.address,
-        a.email,
-        a.password
-    FROM customer a
+        c.id,
+        c.name,
+        c.address,
+        c.email,
+        c.password
+    FROM customer c
     """)
     
     customers = []
@@ -90,13 +90,13 @@ def get_single_customer(id):
         
         db_cursor.execute("""
         SELECT
-            a.id,
-            a.name,
-            a.address,
-            a.email,
-            a.password
-        FROM customer a
-        WHERE a.id = ?
+            c.id,
+            c.name,
+            c.address,
+            c.email,
+            c.password
+        FROM customer c
+        WHERE c.id = ?
         """, ( id, ))
         
         data = db_cursor.fetchone()
