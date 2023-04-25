@@ -73,27 +73,68 @@ WHERE a.id = 3
 
 -- Get only the location row with id field of 2
 SELECT	
-		a.id,
-		a.name,
-		a.address
-FROM location a
-WHERE a.id = 2
+		l.id,
+		l.name,
+		l.address
+FROM location l
+WHERE l.id = 2
 
 -- Get only the employee row with id field of 4
 SELECT
-    a.id,
-    a.name,
-		a.address,
-		a.location_id
-FROM employee a
-WHERE a.id = 4
+    e.id,
+    e.name,
+		e.address,
+		e.location_id
+FROM employee e
+WHERE e.id = 4
 
 -- Get only the customer row with id field of 3
 SELECT
+    c.id,
+    c.name,
+    c.address,
+    c.email,
+    c.password
+FROM customer c
+WHERE c.id = 3
+
+-- Get customer by email
+SELECT
+    c.id,
+    c.name,
+    c.address,
+    c.email,
+    c.password
+FROM Customer c
+WHERE c.email = 'mo@silvera.com'
+
+-- Get animals by location id
+SELECT
     a.id,
     a.name,
-    a.address,
-    a.email,
-    a.password
-FROM customer a
-WHERE a.id = 3
+    a.breed,
+    a.status,
+    a.location_id,
+    a.customer_id
+FROM animal a
+WHERE a.location_id = 2
+
+-- Get employees by location id
+SELECT
+    e.id,
+    e.name,
+		e.address,
+		e.location_id
+FROM employee e
+WHERE e.location_id = 1
+
+-- Get animals by status
+SELECT
+    a.id,
+    a.name,
+    a.breed,
+    a.status,
+    a.location_id,
+    a.customer_id
+FROM animal a
+WHERE a.status = 'Treatment'
