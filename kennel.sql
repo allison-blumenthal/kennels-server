@@ -82,6 +82,18 @@ WHERE a.id = 2
 -- Get only the employee row with id field of 4
 SELECT
     a.id,
-    a.name
+    a.name,
+		a.address,
+		a.location_id
 FROM employee a
 WHERE a.id = 4
+
+-- Get only the customer row with id field of 3
+SELECT
+    a.id,
+    a.name,
+    a.address,
+    a.email,
+    a.password
+FROM customer a
+WHERE a.id = 3
