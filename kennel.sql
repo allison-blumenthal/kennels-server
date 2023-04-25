@@ -97,3 +97,12 @@ SELECT
     a.password
 FROM customer a
 WHERE a.id = 3
+
+SELECT
+    c.id,
+    c.name,
+    c.address,
+    c.email,
+    c.password
+FROM Customer c
+WHERE c.email = 'mo@silvera.com'
