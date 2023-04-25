@@ -98,6 +98,7 @@ SELECT
 FROM customer c
 WHERE c.id = 3
 
+-- Get customer by email
 SELECT
     c.id,
     c.name,
@@ -107,6 +108,7 @@ SELECT
 FROM Customer c
 WHERE c.email = 'mo@silvera.com'
 
+-- Get animals by location id
 SELECT
     a.id,
     a.name,
@@ -116,3 +118,23 @@ SELECT
     a.customer_id
 FROM animal a
 WHERE a.location_id = 2
+
+-- Get employees by location id
+SELECT
+    e.id,
+    e.name,
+		e.address,
+		e.location_id
+FROM employee e
+WHERE e.location_id = 1
+
+-- Get animals by status
+SELECT
+    a.id,
+    a.name,
+    a.breed,
+    a.status,
+    a.location_id,
+    a.customer_id
+FROM animal a
+WHERE a.status = 'Treatment'
