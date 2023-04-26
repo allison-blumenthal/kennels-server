@@ -1,7 +1,7 @@
 from urllib.parse import urlparse, parse_qs
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from views import get_all_animals, get_single_animal, create_animal, delete_animal, update_animal, get_all_locations, get_single_location, create_location, delete_location, update_location,  get_all_employees, get_single_employee, create_employee, delete_employee, update_employee, get_all_customers, get_single_customer, create_customer, delete_customer, update_customer, get_customer_by_email, get_animals_by_location, get_employees_by_location, get_animals_by_status
+from views import get_all_animals, get_single_animal, delete_animal, update_animal, get_all_locations, get_single_location,  get_all_employees, get_single_employee, delete_employee, get_all_customers, get_single_customer, get_customer_by_email, get_animals_by_location, get_employees_by_location, get_animals_by_status
 
 # Here's a class. It inherits from another class.
 # For now, think of a class as a container for functions that
