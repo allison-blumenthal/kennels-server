@@ -73,9 +73,9 @@ WHERE a.id = 3
 
 -- Get only the location row with id field of 2
 SELECT	
-		l.id,
-		l.name,
-		l.address
+    l.id,
+	l.name,
+	l.address
 FROM location l
 WHERE l.id = 2
 
@@ -83,8 +83,8 @@ WHERE l.id = 2
 SELECT
     e.id,
     e.name,
-		e.address,
-		e.location_id
+	e.address,
+	e.location_id
 FROM employee e
 WHERE e.id = 4
 
@@ -123,8 +123,8 @@ WHERE a.location_id = 2
 SELECT
     e.id,
     e.name,
-		e.address,
-		e.location_id
+	e.address,
+	e.location_id
 FROM employee e
 WHERE e.location_id = 1
 
@@ -138,3 +138,59 @@ SELECT
     a.customer_id
 FROM animal a
 WHERE a.status = 'Treatment'
+
+
+-- Get animals, locations, and customers joined
+SELECT
+    a.id,
+    a.name,
+    a.breed,
+    a.status,
+    a.location_id,
+    a.customer_id,
+    l.name location_name,
+    l.address location_address,
+    c.id customer_id,
+    c.name customer_name,
+    c.address customer_address,
+    c.email custoemr_email,
+    c.password customer_password
+FROM Animal a
+JOIN Location l
+    ON l.id = a.location_id
+JOIN Customer c
+    ON c.id = a.customer_id
+
+
+SELECT
+    e.id,
+    e.name,
+	e.address,
+	e.location_id,
+    l.name location_name,
+    l.address location_address
+FROM employee e
+JOIN location l   
+    ON l.id = e.location_id
+
+
+SELECT	
+    l.id,
+	l.name,
+	l.address,
+    e.id employee_id,
+    e.name employee_name,
+	e.address emplolyee_address,
+    a.id animal_id,
+    a.name animal_name,
+    a.breed animal_breed,
+    a.status animal_status,
+    a.customer_id animal_customer_id
+FROM location l
+JOIN employee e
+    ON e.location_id = l.id
+JOIN animal a
+    ON a.location_id = l.id
+WHERE l.id = 2
+
+        

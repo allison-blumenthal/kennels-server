@@ -3,55 +3,55 @@ import json
 
 from models import Customer
 
-CUSTOMERS = [
-    {
-        "id": 1,
-        "name": "Ryan Tanay",
-        "owner": False
-    }
-]
+# CUSTOMERS = [
+#     {
+#         "id": 1,
+#         "name": "Ryan Tanay",
+#         "owner": False
+#     }
+# ]
 
-def get_all_customers():
-    return CUSTOMERS
+# def get_all_customers():
+#     return CUSTOMERS
 
-def get_single_customer(id):
-    requested_customer = None
+# def get_single_customer(id):
+#     requested_customer = None
     
-    for customer in CUSTOMERS:
-        if customer["id"] == id:
-            requested_customer = customer
+#     for customer in CUSTOMERS:
+#         if customer["id"] == id:
+#             requested_customer = customer
             
-    return requested_customer
+#     return requested_customer
 
-def create_customer(customer):
-  max_id = CUSTOMERS[-1]["id"]
+# def create_customer(customer):
+#   max_id = CUSTOMERS[-1]["id"]
   
-  new_id = max_id + 1
+#   new_id = max_id + 1
   
-  customer["id"] = new_id
+#   customer["id"] = new_id
   
-  CUSTOMERS.append(customer)
+#   CUSTOMERS.append(customer)
   
-  return customer
+#   return customer
 
-def delete_customer(id):
-  customer_index = -1
+# def delete_customer(id):
+#   customer_index = -1
   
-  for index, loccation in enumerate(CUSTOMERS):
-    if loccation["id"] == id:
-      customer_index = index
+#   for index, loccation in enumerate(CUSTOMERS):
+#     if loccation["id"] == id:
+#       customer_index = index
   
-  if customer_index >= 0:
-    CUSTOMERS.POP(customer_index)
+#   if customer_index >= 0:
+#     CUSTOMERS.POP(customer_index)
     
-def update_customer(id, new_customer):
-    # Iterate the CUSTOMERS list, but use enumerate() so that
-    # you can access the index value of each item.
-    for index, customer in enumerate(CUSTOMERS):
-        if customer["id"] == id:
-            # Found the customer. Update the value.
-            CUSTOMERS[index] = new_customer
-            break
+# def update_customer(id, new_customer):
+#     # Iterate the CUSTOMERS list, but use enumerate() so that
+#     # you can access the index value of each item.
+#     for index, customer in enumerate(CUSTOMERS):
+#         if customer["id"] == id:
+#             # Found the customer. Update the value.
+#             CUSTOMERS[index] = new_customer
+#             break
 
 #sql statements
 def get_all_customers():
