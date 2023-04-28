@@ -108,11 +108,11 @@ def get_all_animals():
             a.customer_id,
             l.name location_name,
             l.address location_address,
-            c.id,
-            c.name,
-            c.address,
-            c.email,
-            c.password
+            c.id customer_id,
+            c.name customer_name,
+            c.address customer_address,
+            c.email custoemr_email,
+            c.password customer_password
         FROM Animal a
         JOIN Location l
             ON l.id = a.location_id
@@ -227,6 +227,7 @@ def get_animals_by_status(status):
 
         for row in dataset:
             animal = Animal(row['id'], row['name'], row['breed'], row['status'] , row['location_id'], row['customer_id'])
+            
             animals.append(animal.__dict__)
 
     return animals
