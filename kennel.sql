@@ -173,7 +173,7 @@ FROM employee e
 JOIN location l   
     ON l.id = e.location_id
 
-
+-- query that joins location id with employees and animals
 SELECT	
     l.id,
 	l.name,
