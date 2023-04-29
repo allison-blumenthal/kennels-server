@@ -142,23 +142,24 @@ WHERE a.status = 'Treatment'
 
 -- Get animals, locations, and customers joined
 SELECT
-    a.id,
+    a.id animal_id,
     a.name,
     a.breed,
     a.status,
-    a.location_id,
+    a.location_id animal_location_id,
     a.customer_id,
+    l.id location_id,
     l.name location_name,
     l.address location_address,
     c.id customer_id,
     c.name customer_name,
     c.address customer_address,
-    c.email custoemr_email,
+    c.email customer_email,
     c.password customer_password
-FROM Animal a
-JOIN Location l
+FROM animal a
+JOIN location l
     ON l.id = a.location_id
-JOIN Customer c
+JOIN customer c
     ON c.id = a.customer_id
 
 

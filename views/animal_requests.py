@@ -23,10 +23,9 @@ def get_all_animals():
             a.customer_id,
             l.name location_name,
             l.address location_address,
-            c.id customer_id,
             c.name customer_name,
             c.address customer_address,
-            c.email custoemr_email,
+            c.email customer_email,
             c.password customer_password
         FROM Animal a
         JOIN Location l
@@ -51,7 +50,7 @@ def get_all_animals():
             location = Location(row['id'], row['location_name'], row['location_address'])
             
             #Create a Customer instance from the current row
-            customer = Customer(row['id'], row['name'], row['address'], row['email'], row['password'])
+            customer = Customer(row['id'], row['customer_name'], row['customer_address'], row['customer_email'], row['customer_password'])
 
             # Add the dictionary representation of the location and customer to the animal
             animal.location = location.__dict__
