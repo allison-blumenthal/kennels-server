@@ -183,6 +183,7 @@ def update_animal(id, new_animal):
     else:
         # Forces 204 response by main module
         return True
+    
 
 def create_animal(new_animal):
     with sqlite3.connect("./kennel.sqlite3") as conn:

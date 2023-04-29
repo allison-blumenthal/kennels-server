@@ -195,3 +195,23 @@ JOIN animal a
 WHERE l.id = 2
 
         
+-- select all animals
+SELECT * FROM Animal ORDER BY id DESC;
+
+
+-- update query test
+UPDATE Animal
+    SET
+        name = 'Roger',
+        breed = 'Sheltie',
+        status = 'Recreation',
+        location_id = 2,
+        customer_id = 3
+WHERE id = 1
+
+
+-- post animal test
+INSERT INTO Animal
+        ( name, breed, status, location_id, customer_id )
+    VALUES
+        ( 'Minky', 'Yorkie', 'Recreation', 2, 3);
