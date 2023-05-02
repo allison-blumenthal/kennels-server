@@ -1,4 +1,4 @@
-from .animal_requests import get_all_animals, get_single_animal, delete_animal, update_animal, get_animals_by_location, get_animals_by_status, create_animal
+from .animal_requests import get_all_animals, get_single_animal, delete_animal, update_animal, get_animals_by_location, get_animals_by_status, create_animal, search_animal_by_name
 
 from .location_requests import get_all_locations, get_single_location
 

@@ -210,3 +210,36 @@ def create_animal(new_animal):
 
 
     return new_animal
+
+
+# search animals by name and breed
+def search_animal_by_name(term):
+    with sqlite3.connect("./kennel.sqlite3") as conn:
+        db_cursor = conn.cursor()
+        
+        search_query = f"%{term}%"
+        
+        #SQL query to search for term
+        db_cursor.execute("""
+        SELECT
+            a.id,
+            a.name,
+            a.breed,
+            a.status,
+            a.location_id,
+            a.customer_id
+        FROM animal a
+        WHERE a.name LIKE ? 
+        OR a.breed LIKE ?
+        """, ( search_query, search_query, ))
+        
+        search_list = []
+        dataset = db_cursor.fetchall()
+        
+        for row in dataset:
+            animal = Animal(row['id'], row['name'], row['breed'], row['status'], row['location_id'], row['customer_id'])
+            
+            search_list.append(animal.__dict__)
+                
+    return search_list
+        

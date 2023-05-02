@@ -215,3 +215,16 @@ INSERT INTO Animal
         ( name, breed, status, location_id, customer_id )
     VALUES
         ( 'Minky', 'Yorkie', 'Recreation', 2, 3);
+
+
+-- search query
+SELECT
+    a.id,
+    a.name,
+    a.breed,
+    a.status,
+    a.location_id,
+    a.customer_id
+FROM animal a
+WHERE a.name LIKE '%pit%'
+OR a.breed LIKE '%pit%'
