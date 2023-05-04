@@ -152,20 +152,20 @@ class HandleRequests(BaseHTTPRequestHandler):
             # Encode the new animal and send in response
             self.wfile.write(json.dumps(new_animal).encode())
         
-        if resource == "locations":
-            new_location = create_location(post_body)
+        # if resource == "locations":
+        #     new_location = create_location(post_body)
             
-            self.wfile.write(json.dumps(new_location).encode())
+        #     self.wfile.write(json.dumps(new_location).encode())
         
-        if resource == "employees":
-            new_employee = create_employee(post_body)
+        # if resource == "employees":
+        #     new_employee = create_employee(post_body)
             
-            self.wfile.write(json.dumps(new_employee).encode())
+        #     self.wfile.write(json.dumps(new_employee).encode())
         
-        if resource == "customers":
-            new_customer = create_customer(post_body)
+        # if resource == "customers":
+        #     new_customer = create_customer(post_body)
             
-            self.wfile.write(json.dumps(new_customer).encode())
+        #     self.wfile.write(json.dumps(new_customer).encode())
 
     # Here's a method on the class that overrides the parent's method.
     # It handles any PUT request.
@@ -209,20 +209,20 @@ class HandleRequests(BaseHTTPRequestHandler):
             # Encode the new animal and send in response
             self.wfile.write("".encode()) 
         
-        if resource == "locations":
-            delete_location(id)
+        # if resource == "locations":
+        #     delete_location(id)
 
-            self.wfile.write("".encode())   
+        #     self.wfile.write("".encode())   
         
         if resource == "employees":
             delete_employee(id)
             
             self.wfile.write("".encode())   
         
-        if resource == "customers":
-            delete_customer(id)
+        # if resource == "customers":
+        #     delete_customer(id)
 
-            self.wfile.write("".encode())     
+        #     self.wfile.write("".encode())     
 
 
 # This function is not inside the class. It is the starting

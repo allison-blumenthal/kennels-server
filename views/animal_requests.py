@@ -215,6 +215,7 @@ def create_animal(new_animal):
 # search animals by name and breed
 def search_animal_by_name(term):
     with sqlite3.connect("./kennel.sqlite3") as conn:
+        conn.row_factory = sqlite3.Row
         db_cursor = conn.cursor()
         
         search_query = f"%{term}%"
