@@ -1,7 +1,7 @@
 from urllib.parse import urlparse, parse_qs
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from views import get_all_animals, get_single_animal, delete_animal, update_animal, get_all_locations, get_single_location, get_all_employees, get_single_employee, delete_employee, get_all_customers, get_single_customer, get_customer_by_email, get_animals_by_location, get_employees_by_location, get_animals_by_status, create_animal
+from views import get_all_animals, get_single_animal, delete_animal, update_animal, get_all_locations, get_single_location, get_all_employees, get_single_employee, delete_employee, get_all_customers, get_single_customer, get_customer_by_email, get_animals_by_location, get_employees_by_location, get_animals_by_status, create_animal, search_animal_by_name
 
 # Here's a class. It inherits from another class.
 # For now, think of a class as a container for functions that
@@ -116,6 +116,9 @@ class HandleRequests(BaseHTTPRequestHandler):
             if query.get('status') and resource == 'animals':
                 response = get_animals_by_status(query['status'][0])
                 
+            if query.get('search') and resource == 'animals':
+                response = search_animal_by_name(query['search'][0])
+                
         self.wfile.write(json.dumps(response).encode())
       
 
@@ -149,20 +152,20 @@ class HandleRequests(BaseHTTPRequestHandler):
             # Encode the new animal and send in response
             self.wfile.write(json.dumps(new_animal).encode())
         
-        if resource == "locations":
-            new_location = create_location(post_body)
+        # if resource == "locations":
+        #     new_location = create_location(post_body)
             
-            self.wfile.write(json.dumps(new_location).encode())
+        #     self.wfile.write(json.dumps(new_location).encode())
         
-        if resource == "employees":
-            new_employee = create_employee(post_body)
+        # if resource == "employees":
+        #     new_employee = create_employee(post_body)
             
-            self.wfile.write(json.dumps(new_employee).encode())
+        #     self.wfile.write(json.dumps(new_employee).encode())
         
-        if resource == "customers":
-            new_customer = create_customer(post_body)
+        # if resource == "customers":
+        #     new_customer = create_customer(post_body)
             
-            self.wfile.write(json.dumps(new_customer).encode())
+        #     self.wfile.write(json.dumps(new_customer).encode())
 
     # Here's a method on the class that overrides the parent's method.
     # It handles any PUT request.
@@ -206,20 +209,20 @@ class HandleRequests(BaseHTTPRequestHandler):
             # Encode the new animal and send in response
             self.wfile.write("".encode()) 
         
-        if resource == "locations":
-            delete_location(id)
+        # if resource == "locations":
+        #     delete_location(id)
 
-            self.wfile.write("".encode())   
+        #     self.wfile.write("".encode())   
         
         if resource == "employees":
             delete_employee(id)
             
             self.wfile.write("".encode())   
         
-        if resource == "customers":
-            delete_customer(id)
+        # if resource == "customers":
+        #     delete_customer(id)
 
-            self.wfile.write("".encode())     
+        #     self.wfile.write("".encode())     
 
 
 # This function is not inside the class. It is the starting
